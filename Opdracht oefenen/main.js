@@ -2,45 +2,55 @@ console.log('Hello World!')
 
 const nameInput = document.querySelector('.name');
 const ageInput = document.querySelector('.age');
-const niveauInput = document.querySelector('.age');
-const addbtn = document.querySelector('.add-btn');
+const niveauInput = document.querySelector('.niveau'); 
+const addBtn = document.querySelector('.add-btn');
+const userCardsContainer = document.querySelector('#user-cards-container');
 
 const userArray = [];
 
-addbtn.addEventListener('click', addUser());
-    
+addBtn.addEventListener('click', () => {
+    const name = nameInput.value
+    const age = ageInput.value
+    const niveau = niveauInput.value
 
-function addUser(name, age, niveau){
+    
+    if (!name || !age || !niveau) {
+        alert('Please fill in all fields.');
+        return;
+    }
+
     const userObject = {
         name: name,
         age: age,
         niveau: niveau,
     };
-    const naam = nameInput.value;
-    const leeftijd = ageInput.value;
-    const level = niveauInput.value;
-    
-    console.log(userObject)
+
+    console.log(userObject);
+
+    userArray.push(userObject);
+
+    createCard(userObject);
+
+   
+    nameInput.value = '';
+    ageInput.value = '';
+    niveauInput.value = '';
+
+   userArray.innerHTML = '';
+   
+});
+
+
+
+
+function createCard(user) {
+    const userCard = document.createElement('div');
+    userCard.innerHTML = `
+        <h3>Naam: ${user.name}</h3>
+        <p>Leeftijd: ${user.age}</p>
+        <p>Niveau: ${user.niveau}</p>
+    `;
+
     
 }
 
-
-
-
-let userCard = addUser.innerHtml;
-
-function createCard(name, age, niveau){
-    for (let i = 0; i < userObject.length; i++) {
-        text += userObject[i];
-    }
-    
-
-    const listCard = `
-    <h3>Naam:${name.name}</h3>
-    <p>Leeftijd:${age.age}</p>
-    <p>Niveau:${niveau.niveau}</p>
-    `
-    
-    return createCard;
-
-}
