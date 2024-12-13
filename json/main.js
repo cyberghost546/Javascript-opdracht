@@ -33,9 +33,21 @@ console.log(storedPerson.name);
 console.log(storedPerson.hobbie);
 
 const tasks =[
-    {id: 1, description: "Boodschaapen doen", completed: false},
-    {id: 2, description: "Code scrijven", completed: false},
-    {id: 3, description: "Sporten", completed: false},
+    {
+        id: 1, 
+        description: "Boodschaapen doen",
+        completed: false
+    },
+    {
+        id: 2, 
+        description: "Code scrijven", 
+        completed: false
+    },
+    {
+        id: 3, 
+        description: "Sporten", 
+        completed: false
+    },
     
 ];
 
