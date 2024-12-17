@@ -4,7 +4,7 @@ console.log(addButton);
 
 addButton.addEventListener('click', function(){
   console.log('De Knop Werkt!')
-  question()
+  
 });
 
 const users = [];
