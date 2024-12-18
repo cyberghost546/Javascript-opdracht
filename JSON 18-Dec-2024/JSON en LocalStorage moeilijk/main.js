@@ -1,5 +1,10 @@
 console.log('Hello World!!');
 
+const btnTweet = document.querySelector('.tweets')
+const btnLike = document.querySelector('.like')
+const btnEdit = document.querySelector('.edit')
+const btnDelete  = document.querySelector('.delete')
+
 function createTweet(username, content){
     return { 
         id:Date.now(),
@@ -49,5 +54,8 @@ const tweetManager = {
 };
 
 function renderTweets(){
+    const tweets = `<div class='container'></div>
+    `
+
     
 }
