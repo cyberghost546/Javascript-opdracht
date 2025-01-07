@@ -36,12 +36,12 @@ function saveTasks(tasks) {
 
 function loadTasks(){
     const tasksJSON = localStorage.getItem("tasks");
-    // check of er wel een waarde is.
+
     if(tasksJSON) {
-        // zet de bestaande JSON taken om in een array
+       
     return JSON.parse(tasksJSON); 
     } else {
-        // maak een lege array en geef deze terug
+        
       return[]; 
     }
 }
@@ -59,3 +59,19 @@ function completeTask(tasks, id){
 }
 
 saveTasks(tasks);
+
+function deleteTasks(tasks, id){
+    for(let i = 0; i < tasks.length; i++){
+        if(tasks[i].id === id){
+            tasks.splice(i, 1);
+            break;
+        }
+           
+    }
+};
+
+const tasksIdRemove = parseInt(prompt('verwijder'));
+
+
+deleteTasks(tasks, tasksIdRemove);
+console.log(tasks);
