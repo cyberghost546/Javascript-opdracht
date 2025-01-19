@@ -1,9 +1,6 @@
 console.log('Hello World!')
 
 
-
-
-
 const cars =  [
  {
   name: 'toyota',
